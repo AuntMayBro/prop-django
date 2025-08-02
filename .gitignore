@@ -1,0 +1,60 @@
+# Python / Django
+# ----------------------------------------------------------------
+# Byte-compiled / optimized / C extensions
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+
+# Virtual Environments
+# ----------------------------------------------------------------
+.env
+.venv
+env/
+venv/
+
+
+# Database
+# ----------------------------------------------------------------
+# Ignore the local SQLite database used for development.
+db.sqlite3
+db.sqlite3-journal
+
+
+# Static and Media Files
+# ----------------------------------------------------------------
+# Ignore the directory where collectstatic puts files.
+staticfiles/
+
+# Ignore user-uploaded media files.
+media/
+
+
+# Secrets
+# ----------------------------------------------------------------
+# Ignore files containing environment variables and local settings.
+.env
+local_settings.py
+
+
+# Logs & Cache
+# ----------------------------------------------------------------
+*.log
+.coverage
+
+
+# Editor & OS Files
+# ----------------------------------------------------------------
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store

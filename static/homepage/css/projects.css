@@ -1,0 +1,246 @@
+:root {
+    --global-primary-color: #7c3aed;
+    --global-secondary-color: #4f46e5;
+    --text-color-default: #4b5563;
+    --background-color-light: #ffffff;
+    --projects-card-text-color: #181a1a;
+    --projects-card-title-color: #1f2937;
+    --projects-link-color-default: #000000;
+    --projects-link-color-hover: #ce0000;
+    --shadow-color-light: rgba(0, 0, 0, 0.1);
+    --shadow-color-medium: rgba(0, 0, 0, 0.4);
+    --shadow-color-dark: rgba(0, 0, 0, 0.3);
+    --projects-glow-color-light: #ffffff22;
+    --projects-glow-color-dark: #0000000f;
+}
+
+.my-projects-container {
+    max-width: 1500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem 1rem;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+@media (min-width: 640px) {
+    .my-projects-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .my-projects-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.my-projects-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, var(--global-primary-color), var(--global-secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 6px var(--shadow-color-light);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .my-projects-title {
+        font-size: 4.5rem;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .my-projects-title {
+        font-size: 5rem;
+        text-align: left;
+    }
+}
+
+.my-projects-description {
+    font-family: 'Space Grotesk';
+    font-size: 1.1rem;
+    color: var(--text-color-default);
+    line-height: 1.625;
+    margin-bottom: 3rem;
+    max-width: 40rem;
+    font-weight: 800;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .my-projects-description {
+        font-size: 1.5rem;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+.project-cards-wrapper {
+
+    width: 100vw;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding-top: 3rem;
+    /* padding-left: 7rem; */
+    padding-bottom: 5rem;
+    scroll-behavior: smooth;
+    perspective: 1000px;
+    scrollbar-width: none;
+}
+
+@media (max-width: 1024px) {
+    .project-cards-wrapper {
+        padding-top: 1rem;
+        /* padding-left: 1rem; */
+        padding-bottom: 1rem;
+    }
+}
+
+.project-cards-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card-item {
+    flex-shrink: 0;
+}
+
+.project-card {
+    width: 32rem;
+    height: 18rem;
+    max-width: 80vw;
+
+    border-radius: 1rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: var(--projects-card-text-color);
+    font-weight: bold;
+
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 1px 5px var(--shadow-color-medium);
+    background-color: var(--background-color-light);
+
+    transition: transform 0.4s ease-out, box-shadow 0.2s ease-out;
+    transform-style: preserve-3d;
+    transform: scale(0.9) perspective(1000px) rotate3d(0, 0, 0, 0);
+    position: relative;
+    cursor: pointer;
+    
+}
+
+@media (max-width: 425px) {
+    .project-card {
+        width: 32rem;
+        height: 10rem;
+        padding: 0.7rem;
+    }
+}
+
+#pj-card-1 {
+    background-image: url(/pj-images/protfolio.gif);
+    margin-left: 2rem;
+}
+
+/* @media (min-width: 425px) {
+    .project-card-1 {
+        margin-left: 1rem;
+    }
+} */
+
+#pj-card-2 {
+    background-image: url(/pj-images/FrontPage.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#pj-card-3 {
+    background-image: url(/pj-images/hostel.gif);
+    background-size: cover;
+}
+
+#pj-card-4 {
+    background-image: url(/pj-images/rubixcube.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#pj-card-5 {
+    background-image: url(/pj-images/Ai.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+#project-card-item-5 {
+    padding-right: 20%;
+}
+
+
+.project-card:hover {
+    box-shadow: 0 20px 40px var(--shadow-color-dark);
+}
+
+.project-card .glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+
+    background-image: radial-gradient(circle at 50% -20%, var(--projects-glow-color-light), var(--projects-glow-color-dark));
+    transition: background-image 0.2s ease-out;
+    z-index: 1;
+}
+
+
+.card-title {
+    font-family: 'Space Grotesk';
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--projects-card-title-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.card-link-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.card-link {
+    font: bolder;
+    color: var(--projects-link-color-default);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: var(--projects-link-color-hover);
+    text-shadow: var(--projects-card-title-color);
+}

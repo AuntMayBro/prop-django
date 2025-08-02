@@ -1,0 +1,434 @@
+:root {
+    --navbar-highlight-purple: #A020F0;
+    --text-color-secondary: #b0b0b0;
+    --hero-intro-color: #9f7aea;
+    --text-color-light: #ffffff;
+    --hero-subtitle-color: #d1d5db;
+    --hero-social-icon-color: var(--text-color-secondary);
+    --hero-button-glow-gradient-start-1: #6366f1;
+    --hero-button-glow-gradient-start-2: #ec4899;
+    --hero-button-glow-gradient-end: #facc15;
+    --hero-button-background-dark: #111827;
+    --hero-button-background-hover: #1f2937;
+    --hero-button-text-color: white;
+    --hero-arrow-color: white;
+    --hero-abstract-path-color: #8a2be2;
+    --hero-abstract-circle-color: #8a2be2;
+    --hero-button-shadow-color: rgba(75, 85, 99, 0.3);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content-wrapper {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 5;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------
+    Hero LEFT (previously RIGHT, but based on HTML it's left)
+---------------------------------------------------------------------------------------------------------------------------------- */
+
+.left-content {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.intro {
+    color: var(--hero-intro-color);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 7px;
+}
+
+.myName {
+    margin: 10px 0;
+    color: var(--text-color-light);
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding-right: 15px;
+    text-shadow: 0 0 10px var(--navbar-highlight-purple), 0 0 20px var(--navbar-highlight-purple);
+    animation: glowPulse 2.5s infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px var(--navbar-highlight-purple), 0 0 20px var(--navbar-highlight-purple);
+    }
+
+    50% {
+        text-shadow: 0 0 5px var(--navbar-highlight-purple), 0 0 10px var(--navbar-highlight-purple);
+    }
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 1.875rem;
+  color: var(--hero-subtitle-color);
+  font-family: monospace;
+  line-height: 1.625;
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.cursor {
+  font-weight: 500;
+  margin-left: 5px;
+  animation: blink 0.7s steps(2) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.social-icons svg {
+    width: 28px;
+    height: 28px;
+    color: var(--hero-social-icon-color);
+    transition: color 0.3s ease;
+    stroke-width: 2;
+}
+
+
+.social-icons a:hover svg {
+    color: var(--navbar-highlight-purple);
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.letsTalkButton-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.letsTalkButton-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--hero-button-glow-gradient-start-1), var(--hero-button-glow-gradient-start-2), var(--hero-button-glow-gradient-end));
+    border-radius: 1rem;
+    filter: blur(1.2rem);
+    opacity: 0.6;
+    transition: all 1s ease;
+    z-index: 0;
+}
+
+.letsTalkButton-wrapper:hover .letsTalkButton-glow {
+    opacity: 1;
+    transition-duration: 0.2s;
+}
+
+.letsTalkButton-main {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--hero-button-background-dark);
+    color: var(--hero-button-text-color);
+    padding: 0.75rem 2rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.letsTalkButton-main:hover {
+    background-color: var(--hero-button-background-hover);
+    box-shadow: 0 8px 16px var(--hero-button-shadow-color);
+    transform: translateY(-2px);
+}
+
+.arrow-icon {
+    margin-left: 0.5rem;
+    margin-top: 0.125rem;
+    stroke: var(--hero-arrow-color);
+    stroke-width: 2;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.arrow-line {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.letsTalkButton-main:hover .arrow-line {
+    opacity: 1;
+}
+
+.arrow-head {
+    transition: transform 0.2s ease;
+}
+
+.letsTalkButton-main:hover .arrow-head {
+    transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+    .letsTalkButton-main {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .letsTalkButton-main {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .arrow-icon {
+        height: 8px;
+        width: 8px;
+    }
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------
+    Hero Illustration (Right Content)
+---------------------------------------------------------------------------------------------------------------------------------- */
+
+.hero-illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-illustration dotlottie-player {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    transform: none;
+    z-index: 2;
+    position: relative;
+}
+
+.abstract-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    display: block;
+}
+
+.abstract-path {
+    fill: none;
+    stroke: var(--hero-abstract-path-color);
+    stroke-width: 3px;
+    opacity: 0.3;
+}
+
+.abstract-circle {
+    fill: var(--hero-abstract-circle-color);
+    opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 60px 30px;
+    }
+
+    .hero-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .left-content {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .myName {
+        font-size: 3.5rem;
+    }
+
+    .myName::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 20px);
+    }
+
+    .subtitle {
+        font-size: 1.8rem;
+        justify-content: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .social-icons svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .letsTalkButton-main {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .hero-illustration {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        transform: none;
+    }
+
+    .hero-illustration dotlottie-player {
+        width: 90%;
+        height: auto;
+        max-height: 400px;
+        transform: none;
+    }
+
+    .abstract-background {
+        display: none
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .myName {
+        font-size: 2.8rem;
+    }
+
+    .myName::after {
+        height: 35%;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .social-icons {
+        gap: 20px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .social-icons svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .letsTalkButton-main {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .hero-illustration dotlottie-player {
+        max-width: 100%;
+        max-height: 350px;
+    }
+
+    .abstract-background {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro {
+        font-size: 1em;
+    }
+
+    .myName {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+
+    .myName::after {
+        height: 30%;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icons svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .letsTalkButton-main {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .hero-illustration dotlottie-player {
+        width: 100%;
+        max-height: 300px;
+    }
+}

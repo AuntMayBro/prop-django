@@ -1,0 +1,204 @@
+.last-container {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    margin-bottom: 80px;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1500px;
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    align-self: center;
+    justify-content: center;
+}
+
+.contact-header p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+
+}
+
+.contact-header h1 {
+    margin-top: 0.5rem;
+    font-size: var(--font-size-xl);
+    /* font-size: 2.5rem; */
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(90deg, var(--global-primary-color), var(--global-secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+
+}
+
+.contact-header .subtitle {
+    font-size: 1.25rem;
+    color: #495057;
+    margin-bottom: 2.5rem;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 auto;
+
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border: 2px solid #ced4da;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #212529;
+    transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: transparent;
+}
+
+.form-label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0 0.25rem;
+    background-color: #ffffff;
+    color: #6c757d;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.form-input:focus+.form-label,
+.form-input:not(:placeholder-shown)+.form-label {
+    top: -0.75rem;
+    left: 0.75rem;
+    font-size: 0.875rem;
+    color: #0d6efd;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    max-width: 124px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--global-primary-color);
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg, var(--global-primary-color), var(--global-secondary-color));
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+}
+
+.submit-btn .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .arrow {
+    transform: translateX(4px);
+}
+
+
+@media (min-width: 1024px) {
+    .contact-header h1 {
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-container {
+        padding: 2rem;
+    }
+
+    .contact-header h1 {
+        align-items: center;
+    }
+}
+
+/* --- Simple & Minimal Django Messages --- */
+#toast {
+    visibility: hidden; 
+    min-width: 250px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px; 
+    font-size: 17px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: visibility 0.5s, opacity 0.5s, bottom 0.5s;
+    opacity: 0;
+}
+
+/* Style for error toasts */
+#toast.error {
+    background-color: #f44336;
+}
+
+/* Class to show the toast */
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; 
+    animation: fadeInOut 3.0s;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { 
+        opacity: 0; 
+        bottom: 0px; 
+    }
+    10%, 90% { 
+        opacity: 1; 
+        bottom: 30px; 
+    }
+}
