@@ -130,22 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 # This should be at the top level, not inside a function or if-statement
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# The URL to use when referring to static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-
-# The absolute path to the directory where collectstatic will collect static files for deployment.
-# This is the directory Whitenoise will serve files from.
+STATIC_URL = '/staticfiles/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# The storage engine that handles compression and caching.
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Optional: The directories where Django will look for static files in addition to
-# each app's 'static' directory.
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 ]
 
 # Default primary key field type
