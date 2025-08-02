@@ -1,0 +1,79 @@
+/* all-roots.css */
+/*
+ * This file consolidates all :root variables from
+ * skills.css, projects.css, navbar.css, hero.css, and contact.css
+ * with consistent and semantic naming.
+ */
+:root {
+    /* Global Colors */
+    --global-primary-color: #7c3aed;
+    --global-secondary-color: #4f46e5;
+    --background-color-light: #ffffff;
+    --background-text-color-gray: gray;
+    --border-color-default: #e0e0e0;
+
+    /* Text Colors */
+    --text-color-default: #4b5563;
+    --text-color-light: #ffffff;
+    /* Used in contact and hero */
+    --text-color-secondary: #b0b0b0;
+    /* Used in navbar and hero */
+
+    /* Shadow Colors (generalized from projects.css and contact.css) */
+    --shadow-color-light: rgba(0, 0, 0, 0.08);
+    /* Using 0.08 from contact for light */
+    --shadow-color-medium: rgba(0, 0, 0, 0.4);
+    /* From projects */
+    --shadow-color-dark: rgba(0, 0, 0, 0.25);
+    /* Using 0.25 from contact for dark */
+
+    /* Navbar Specific */
+    --navbar-highlight-purple: #A020F0;
+    --navbar-text-dark-bg: #333333;
+    --navbar-logo-color: rgb(0, 0, 0);
+    --navbar-icon-color-default: rgb(0, 0, 0);
+
+    /* Hero Specific */
+    --hero-intro-color: #9f7aea;
+    --hero-subtitle-color: #d1d5db;
+    --hero-social-icon-color: var(--text-color-secondary);
+    /* Refers to global text-color-secondary */
+    --hero-button-glow-gradient-start-1: #6366f1;
+    --hero-button-glow-gradient-start-2: #ec4899;
+    --hero-button-glow-gradient-end: #facc15;
+    --hero-button-background-dark: #111827;
+    --hero-button-background-hover: #1f2937;
+    --hero-button-text-color: white;
+    --hero-arrow-color: white;
+    --hero-abstract-path-color: #8a2be2;
+    --hero-abstract-circle-color: #8a2be2;
+    --hero-button-shadow-color: rgba(75, 85, 99, 0.3);
+
+    /* Contact Specific */
+    --contact-main-purple: #6a0dad;
+    --contact-light-purple: #a765e6;
+    --contact-gold-accent: #ffc107;
+    --contact-text-color-dark: #1a1a1a;
+    --contact-background-color-dark: #2c2c54;
+    --contact-gradient-background: linear-gradient(135deg, #f0f4f8, #e6e9f0);
+
+    /* Projects Specific */
+    --projects-card-text-color: #181a1a;
+    --projects-card-title-color: #1f2937;
+    --projects-link-color-default: #000000;
+    --projects-link-color-hover: #ce0000;
+    --projects-glow-color-light: #ffffff22;
+    --projects-glow-color-dark: #0000000f;
+
+    /* Font & Spacing (from skills.css as they seem general) */
+    --font-primary: 'Space Grotesk', sans-serif;
+    --font-secondary: sans-serif;
+    --font-size-sm: clamp(0.75rem, 0.69rem + 0.28vw, 0.875rem);
+    --font-size-md: clamp(1.1rem, 0.98rem + 0.61vw, 1.5rem);
+    --font-size-xl: clamp(2.5rem, 1.79rem + 3.57vw, 5rem);
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+}

@@ -1,0 +1,44 @@
+/* Hide the default cursor on the page and interactive elements */
+body, a, button, [role="button"], input, textarea, select {
+  cursor: none;
+}
+
+/* The outer ring of the cursor */
+.custom-cursor-ring {
+    width: 25px; /* Increased from 20px */
+    height: 25px; /* Increased from 20px */
+    border: 2px solid var(--global-primary-color, #7c3aed);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, border-width 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* The central dot of the cursor */
+.custom-cursor-dot {
+    width: 10px; /* Increased from 8px */
+    height: 10px; /* Increased from 8px */
+    background-color: var(--global-primary-color, #7c3aed);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* This class is added by JS when hovering over links or buttons */
+.custom-cursor-ring.hover {
+    width: 60px; /* Increased from 50px */
+    height: 60px; /* Increased from 50px */
+    border-width: 3px;
+    opacity: 0.5;
+}
+
+.custom-cursor-dot.hover {
+    transform: translate(-50%, -50%) scale(1.5);
+}

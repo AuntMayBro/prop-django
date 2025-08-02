@@ -1,0 +1,69 @@
+.scrolling-text-section {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 2rem; */
+}
+
+.scrolling-text-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.scrolling-text {
+    display: inline-block;
+    font-size: 2.2vw; 
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+    will-change: transform;
+    transition: transform 0.05s linear;
+}
+
+.collaboration-text {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.collaboration-text h2 {
+    font-size: 2.5vw; 
+    font-weight: bold;
+    color: #111;
+}
+
+.collaboration-text h2 span {
+    color: #6c63ff;
+    transition: color 0.3s ease;
+}
+
+.collaboration-text h2 span:hover {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .scrolling-text {
+        font-size: 6vw;
+        font-weight: 700;
+    }
+
+    .collaboration-text h2 {
+        font-size: 8vw; 
+        line-height: 1.2; 
+    }
+
+    @media (max-width: 480px) {
+        .scrolling-text {
+            font-size: 8vw;
+        }
+        .collaboration-text h2 {
+            font-size: 10vw;
+        }
+    }
+}
